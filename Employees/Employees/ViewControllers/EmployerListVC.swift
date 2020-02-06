@@ -14,6 +14,7 @@ class EmployerListVC: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Employees"
         collectionView.register(EmployeeViewCell.self, forCellWithReuseIdentifier: cellID)
         collectionView.backgroundColor = .systemBackground
         
@@ -46,7 +47,7 @@ class EmployerListVC: UICollectionViewController {
 
 extension EmployerListVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width - 20, height: 250)
+        return .init(width: view.frame.width - 20, height: 500)
     }
 }
 
