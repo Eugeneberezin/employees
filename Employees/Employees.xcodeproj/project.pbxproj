@@ -16,6 +16,8 @@
 		05DAF98223E90C750035F5E4 /* EmployeesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAF98123E90C750035F5E4 /* EmployeesUITests.swift */; };
 		05DAF99123E912CE0035F5E4 /* UILayoutHelpers+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAF99023E912CE0035F5E4 /* UILayoutHelpers+Extensions.swift */; };
 		05DAF99823E91A550035F5E4 /* EmployeeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAF99723E91A550035F5E4 /* EmployeeViewCell.swift */; };
+		05DAF99B23ED03670035F5E4 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAF99A23ED03670035F5E4 /* ErrorMessage.swift */; };
+		05DAF99E23ED06D80035F5E4 /* EmployeeModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAF99D23ED06D80035F5E4 /* EmployeeModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		05DAF98323E90C750035F5E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05DAF99023E912CE0035F5E4 /* UILayoutHelpers+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutHelpers+Extensions.swift"; sourceTree = "<group>"; };
 		05DAF99723E91A550035F5E4 /* EmployeeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeViewCell.swift; sourceTree = "<group>"; };
+		05DAF99A23ED03670035F5E4 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		05DAF99D23ED06D80035F5E4 /* EmployeeModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 		05DAF95E23E90C730035F5E4 /* Employees */ = {
 			isa = PBXGroup;
 			children = (
+				05DAF99C23ED06AD0035F5E4 /* Modals */,
+				05DAF99923ED03430035F5E4 /* Utilities */,
 				05DAF99423E913420035F5E4 /* Views */,
 				05DAF99323E913070035F5E4 /* Config */,
 				05DAF99223E912E50035F5E4 /* ViewControllers */,
@@ -161,6 +167,22 @@
 				05DAF99723E91A550035F5E4 /* EmployeeViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		05DAF99923ED03430035F5E4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				05DAF99A23ED03670035F5E4 /* ErrorMessage.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		05DAF99C23ED06AD0035F5E4 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				05DAF99D23ED06D80035F5E4 /* EmployeeModal.swift */,
+			);
+			path = Modals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +319,8 @@
 				05DAF96423E90C730035F5E4 /* EmployerListVC.swift in Sources */,
 				05DAF96023E90C730035F5E4 /* AppDelegate.swift in Sources */,
 				05DAF99123E912CE0035F5E4 /* UILayoutHelpers+Extensions.swift in Sources */,
+				05DAF99B23ED03670035F5E4 /* ErrorMessage.swift in Sources */,
+				05DAF99E23ED06D80035F5E4 /* EmployeeModal.swift in Sources */,
 				05DAF96223E90C730035F5E4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
