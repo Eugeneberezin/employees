@@ -26,9 +26,10 @@ class EmployerListVC: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! EmployeeViewCell
-        
+        cell.layer.cornerRadius = 12
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.black.cgColor
+    
         return cell
         
     }

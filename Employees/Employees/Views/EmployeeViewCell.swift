@@ -28,10 +28,26 @@ class EmployeeViewCell: UICollectionViewCell {
     let topPadding: CGFloat = 10
     let leftingPadding: CGFloat = 60
     let rightPadding: CGFloat = 60
+    
+    fileprivate func scaleText() {
+        fullNameLabel.adjustsFontForContentSizeCategory = true
+        fullNameLabel.numberOfLines = 0
+        phoneNumberLabel.adjustsFontForContentSizeCategory = true
+        phoneNumberLabel.numberOfLines = 0
+        emailAddressLabel.adjustsFontForContentSizeCategory = true
+        emailAddressLabel.numberOfLines = 0
+        teamLabel.adjustsFontForContentSizeCategory = true
+        teamLabel.numberOfLines = 0
+        employeeTypeLabel.adjustsFontForContentSizeCategory = true
+        employeeTypeLabel.numberOfLines = 0
+        biography.adjustsFontForContentSizeCategory = true
+    }
+    
     private func configureUI() {
         addSubview(photoView)
         photoView.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: topPadding, left: leftingPadding, bottom: topPadding, right: rightPadding))
         let stackView = UIStackView(arrangedSubviews: [fullNameLabel, phoneNumberLabel, emailAddressLabel, teamLabel, employeeTypeLabel, biography])
+        scaleText()
         biography.backgroundColor = UIColor(named: "cellBackgorund")
         stackView.axis = .vertical
         stackView.spacing = 10
