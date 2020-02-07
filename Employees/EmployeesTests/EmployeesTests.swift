@@ -19,10 +19,21 @@ class EmployeesTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testStringsForUILabelsAndTextView() {
+        let employeeCell = EmployeeViewCell()
+        employeeCell.fullNameLabel.text = "Test name"
+        employeeCell.phoneNumberLabel.text = "7777777777"
+        employeeCell.emailAddressLabel.text = "email@test.org"
+        employeeCell.employeeTypeLabel.text = EmployeeType.fullTime.rawValue
+        employeeCell.biography.text = "This is bio"
+        XCTAssertEqual(employeeCell.fullNameLabel.text, "Test name")
+        XCTAssertEqual(employeeCell.phoneNumberLabel.text, "7777777777")
+        XCTAssertEqual(employeeCell.emailAddressLabel.text, "email@test.org")
+        XCTAssertEqual(employeeCell.employeeTypeLabel.text, "FULL_TIME")
+        XCTAssertEqual(employeeCell.biography.text, "This is bio")
+        
     }
+    
 
     func testPerformanceExample() {
         // This is an example of a performance test case.

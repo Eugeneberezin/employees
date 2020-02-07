@@ -20,10 +20,10 @@ struct Employee: Codable {
     var biography: String?
     var photoUrlSmall: String?
     var team: String
-    var employeeType: employeeType
+    var employeeType: EmployeeType
 }
 
-enum employeeType: String, Codable {
+enum EmployeeType: String, Codable {
     case fullTime = "FULL_TIME"
     case partTime = "PART_TIME"
     case contractor = "CONTRACTOR"
