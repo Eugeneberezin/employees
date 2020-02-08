@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class EmployeeService {
     static let shared = EmployeeService()
     let url = "https://s3.amazonaws.com/sq-mobile-interview/employees.json"
@@ -50,7 +49,7 @@ class EmployeeService {
                 completed(.success(employees.employees ?? []))
                 print(employees)
             } catch {
-                completed(.failure(.invalidResponse))
+                completed(.failure(.malformedList))
                 print(error.localizedDescription)
             }
             
@@ -93,7 +92,7 @@ class EmployeeService {
                 completed(.success(employees.employees ?? []))
                 print(employees)
             } catch {
-                completed(.failure(.invalidResponse))
+                completed(.failure(.malformedList))
                 print(error.localizedDescription)
             }
             
@@ -119,13 +118,13 @@ class EmployeeService {
             }
             
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                completed(.failure(.invalidResponse))
+                completed(.failure(.malformedList))
                 print(error?.localizedDescription)
                 return
             }
             
             guard let data = data else {
-                completed(.failure(.invalidResponse))
+                completed(.failure(.malformedList))
                 print(error?.localizedDescription)
                 return
             }
@@ -137,7 +136,7 @@ class EmployeeService {
                 completed(.success(employees.employees ?? []))
                 print(employees)
             } catch {
-                completed(.failure(.invalidResponse))
+                completed(.failure(.malformedList))
                 print(error.localizedDescription)
             }
             

@@ -14,7 +14,7 @@ class EmployeeViewCell: UICollectionViewCell {
     var employee: Employee! {
         didSet {
             guard let imageURL = URL(string: employee.photoUrlSmall ?? "") else { return }
-            photoView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "small"))
+            photoView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "Small"), options: .waitStoreCache)
             fullNameLabel.text = "Full name: " + employee.fullName
             phoneNumberLabel.text = "Phone number: \(employee.phoneNumber ?? "")"
             emailAddressLabel.text = "Email: \(employee.emailAddress)"

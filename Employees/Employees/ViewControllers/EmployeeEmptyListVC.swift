@@ -1,15 +1,15 @@
 //
-//  ViewController.swift
+//  EmployeeEmptyListVC.swift
 //  Employees
 //
-//  Created by Eugene Berezin on 2/3/20.
+//  Created by Eugene Berezin on 2/8/20.
 //  Copyright © 2020 Eugene Berezin. All rights reserved.
 //
 
 import UIKit
 import JGProgressHUD
 
-class EmployerListVC: UICollectionViewController {
+class EmployeeEmptyListVC: UICollectionViewController {
     
     let cellID = "employeeCell"
     var employees = [Employee]()
@@ -24,16 +24,16 @@ class EmployerListVC: UICollectionViewController {
         getEmployees()
         
     }
-    let hud = JGProgressHUD()
+    
     fileprivate func getEmployees() {
-        EmployeeService.shared.getEmployeeList {[weak self]  (result) in
+        EmployeeService.shared.getEmptyList {[weak self]  (result) in
             
-            
+            let hud = JGProgressHUD()
             
             DispatchQueue.main.async {
-                self?.hud.textLabel.text = "Loading"
-                self?.hud.show(in: self!.collectionView)
-                self?.hud.detailTextLabel.text = "Loading a list of employees"
+                hud.textLabel.text = "Loading"
+                hud.show(in: self!.collectionView)
+                hud.detailTextLabel.text = "Loading a list of employees"
             }
             switch result {
             case.success(let employees):
@@ -41,7 +41,7 @@ class EmployerListVC: UICollectionViewController {
                 
                 DispatchQueue.main.async {
                     self?.collectionView.reloadData()
-                    self?.hud.dismiss()
+                    hud.dismiss()
                 }
                 
                 if employees.isEmpty {
@@ -57,7 +57,7 @@ class EmployerListVC: UICollectionViewController {
             case.failure(let error):
                 
                 DispatchQueue.main.async {
-                    self?.hud.dismiss()
+                    hud.dismiss()
                     let ac = UIAlertController(title: error.rawValue, message: nil, preferredStyle: .alert)
                     ac.addAction(UIAlertAction(title: "OK", style: .default))
                     self?.present(ac,animated: true)
@@ -96,7 +96,7 @@ class EmployerListVC: UICollectionViewController {
 
 }
 
-extension EmployerListVC: UICollectionViewDelegateFlowLayout {
+extension EmployeeEmptyListVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: view.frame.width - 20, height: 700)
     }

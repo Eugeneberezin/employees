@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0584E63123EEA46C00626E5E /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 0584E63023EEA46C00626E5E /* JGProgressHUD */; };
+		0584E63323EF3B5700626E5E /* EmployeeMalformedListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584E63223EF3B5700626E5E /* EmployeeMalformedListVC.swift */; };
+		0584E63523EF3BBD00626E5E /* EmployeeEmptyListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584E63423EF3BBD00626E5E /* EmployeeEmptyListVC.swift */; };
+		0584E63723EF3C7D00626E5E /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0584E63623EF3C7D00626E5E /* MainVC.swift */; };
 		05DAF96023E90C730035F5E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAF95F23E90C730035F5E4 /* AppDelegate.swift */; };
 		05DAF96223E90C730035F5E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAF96123E90C730035F5E4 /* SceneDelegate.swift */; };
 		05DAF96423E90C730035F5E4 /* EmployerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DAF96323E90C730035F5E4 /* EmployerListVC.swift */; };
@@ -40,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0584E63223EF3B5700626E5E /* EmployeeMalformedListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeMalformedListVC.swift; sourceTree = "<group>"; };
+		0584E63423EF3BBD00626E5E /* EmployeeEmptyListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeEmptyListVC.swift; sourceTree = "<group>"; };
+		0584E63623EF3C7D00626E5E /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		05DAF95C23E90C730035F5E4 /* Employees.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Employees.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05DAF95F23E90C730035F5E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05DAF96123E90C730035F5E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0584E63123EEA46C00626E5E /* JGProgressHUD in Frameworks */,
 				05DAF9A423EE6F580035F5E4 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +161,9 @@
 			isa = PBXGroup;
 			children = (
 				05DAF96323E90C730035F5E4 /* EmployerListVC.swift */,
+				0584E63223EF3B5700626E5E /* EmployeeMalformedListVC.swift */,
+				0584E63423EF3BBD00626E5E /* EmployeeEmptyListVC.swift */,
+				0584E63623EF3C7D00626E5E /* MainVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -216,6 +227,7 @@
 			name = Employees;
 			packageProductDependencies = (
 				05DAF9A323EE6F580035F5E4 /* SDWebImage */,
+				0584E63023EEA46C00626E5E /* JGProgressHUD */,
 			);
 			productName = Employees;
 			productReference = 05DAF95C23E90C730035F5E4 /* Employees.app */;
@@ -291,6 +303,7 @@
 			mainGroup = 05DAF95323E90C730035F5E4;
 			packageReferences = (
 				05DAF9A223EE6F580035F5E4 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				0584E62F23EEA46C00626E5E /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = 05DAF95D23E90C730035F5E4 /* Products */;
 			projectDirPath = "";
@@ -338,9 +351,12 @@
 				05DAF96423E90C730035F5E4 /* EmployerListVC.swift in Sources */,
 				05DAF96023E90C730035F5E4 /* AppDelegate.swift in Sources */,
 				05DAF99123E912CE0035F5E4 /* UILayoutHelpers+Extensions.swift in Sources */,
+				0584E63723EF3C7D00626E5E /* MainVC.swift in Sources */,
+				0584E63323EF3B5700626E5E /* EmployeeMalformedListVC.swift in Sources */,
 				05DAF99B23ED03670035F5E4 /* ErrorMessage.swift in Sources */,
 				05DAF99E23ED06D80035F5E4 /* EmployeeModal.swift in Sources */,
 				05DAF9A123EE57110035F5E4 /* EmployeeService.swift in Sources */,
+				0584E63523EF3BBD00626E5E /* EmployeeEmptyListVC.swift in Sources */,
 				05DAF96223E90C730035F5E4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -664,6 +680,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0584E62F23EEA46C00626E5E /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
 		05DAF9A223EE6F580035F5E4 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
@@ -675,6 +699,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0584E63023EEA46C00626E5E /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0584E62F23EEA46C00626E5E /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
+		};
 		05DAF9A323EE6F580035F5E4 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 05DAF9A223EE6F580035F5E4 /* XCRemoteSwiftPackageReference "SDWebImage" */;

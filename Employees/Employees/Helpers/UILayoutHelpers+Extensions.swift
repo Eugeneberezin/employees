@@ -175,4 +175,5 @@ extension UILabel {
         self.textColor = textColor
         self.textAlignment = textAlignment
     }
+    
 }

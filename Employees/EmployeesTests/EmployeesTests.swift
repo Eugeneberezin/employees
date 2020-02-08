@@ -34,12 +34,36 @@ class EmployeesTests: XCTestCase {
         
     }
     
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testEmployeeModal() {
+        let employeeCell = EmployeeViewCell()
+        let employee = Employee(fullName: "Jon Doe", phoneNumber: "777777777", emailAddress: "test@email.com", biography: "biography test", photoUrlSmall: "https://photo.com", team: "Test tea,", employeeType: EmployeeType(rawValue: EmployeeType.fullTime.rawValue)!)
+        
+        employeeCell.fullNameLabel.text = employee.fullName
+        employeeCell.phoneNumberLabel.text = employee.phoneNumber
+        employeeCell.emailAddressLabel.text = employee.emailAddress
+        employeeCell.teamLabel.text = employee.team
+        employeeCell.biography.text = employee.biography
+        
+        XCTAssertEqual(employeeCell.fullNameLabel.text, employee.fullName, "Full name is incorrect")
+        XCTAssertEqual( employeeCell.phoneNumberLabel.text, employee.phoneNumber, "Phone number is incorrect")
+        XCTAssertEqual(employeeCell.emailAddressLabel.text, employee.emailAddress, "Email is incorrect")
+        XCTAssertEqual(employeeCell.teamLabel.text, employee.team, "Team is incorrect")
+        XCTAssertEqual(employeeCell.biography.text, employee.biography, "Bio is incorrect")
+        
     }
-
+    
+    func testMainVC() {
+        let mainVC = MainVC()
+        mainVC.viewDidLoad()
+        XCTAssert(mainVC.getEmployeeListButton.isEnabled)
+        XCTAssert(mainVC.getMalFormedEmployeeListButton.isEnabled)
+        XCTAssert(mainVC.getEmployeeListButton.isEnabled)
+        XCTAssertEqual(mainVC.getMalFormedEmployeeListButton.title(for: .normal)!, "Get Malformed Employee List"  , "Title is wrong")
+        XCTAssertEqual(mainVC.getEmployeeListButton.title(for: .normal)!, "Get Employee List"  , "Title is wrong")
+        XCTAssertEqual(mainVC.getEmptyEmployeeListButton.title(for: .normal)!, "Get Empty Employee List"  , "Title is wrong")
+        XCTAssertNotNil(mainVC.getEmptyEmployeeListButton)
+        XCTAssertNotNil(mainVC.getMalFormedEmployeeListButton)
+        XCTAssertNotNil(mainVC.getEmployeeListButton)
+        }
+    
 }
