@@ -56,7 +56,7 @@ class MainVC: UIViewController {
         stackView.spacing = 10
         view.addSubview(stackView)
         
-        stackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, padding: .init(top: 100, left: 30, bottom: 450, right: 30))
+        stackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 100, left: 30, bottom: 0, right: 30))
     }
     
     @objc private func navigateToEmployeeList() {
