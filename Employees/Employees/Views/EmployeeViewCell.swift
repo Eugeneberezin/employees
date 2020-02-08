@@ -7,8 +7,22 @@
 //
 
 import UIKit
+import SDWebImage
 
 class EmployeeViewCell: UICollectionViewCell {
+    
+    var employee: Employee! {
+        didSet {
+            guard let imageURL = URL(string: employee.photoUrlSmall ?? "") else { return }
+            photoView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "small"))
+            fullNameLabel.text = "Full name: " + employee.fullName
+            phoneNumberLabel.text = "Phone number: \(employee.phoneNumber ?? "")"
+            emailAddressLabel.text = "Email: \(employee.emailAddress)"
+            teamLabel.text = "Team: \(employee.team)"
+            employeeTypeLabel.text = "Employment type: \(employee.employeeType.rawValue)"
+            biography.text = "Bio: " + (employee.biography ?? "")
+        }
+    }
     
     let photoView = UIImageView(image: UIImage(named: "small"))
     let fullNameLabel = UILabel(text: "Full name: Justine Mason", font: UIFont.preferredFont(forTextStyle: .body), textColor: .label)
