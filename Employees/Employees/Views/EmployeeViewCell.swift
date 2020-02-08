@@ -14,6 +14,7 @@ class EmployeeViewCell: UICollectionViewCell {
     var employee: Employee! {
         didSet {
             guard let imageURL = URL(string: employee.photoUrlSmall ?? "") else { return }
+            photoView.image?.accessibilityLabel = "Employee's photo"
             photoView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "Small"), options: .waitStoreCache)
             fullNameLabel.text = "Full name: " + employee.fullName
             phoneNumberLabel.text = "Phone number: \(employee.phoneNumber ?? "")"
@@ -59,6 +60,8 @@ class EmployeeViewCell: UICollectionViewCell {
     
     private func configureUI() {
         addSubview(photoView)
+        photoView.accessibilityLabel = "Employee's photo"
+        photoView.image?.accessibilityLabel = "Employee's photo"
         photoView.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: topPadding, left: leftingPadding, bottom: topPadding, right: rightPadding))
         let stackView = UIStackView(arrangedSubviews: [fullNameLabel, phoneNumberLabel, emailAddressLabel, teamLabel, employeeTypeLabel, biography])
         scaleText()
