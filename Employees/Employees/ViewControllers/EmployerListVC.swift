@@ -107,7 +107,7 @@ extension EmployerListVC: UICollectionViewDelegateFlowLayout {
         dummyCell.employeeTypeLabel.text = employees[indexPath.item].employeeType.rawValue
         dummyCell.biography.text = employees[indexPath.item].biography
         dummyCell.layoutIfNeeded()
-        let estimatedSize = dummyCell.systemLayoutSizeFitting(.init(width: view.frame.width, height: 500))
+        let estimatedSize = dummyCell.systemLayoutSizeFitting(.init(width: view.frame.width, height: 600))
         
         
         return .init(width: view.frame.width - 20, height: estimatedSize.height)
