@@ -26,7 +26,7 @@ class EmployeeEmptyListVC: UICollectionViewController {
     }
     
     fileprivate func getEmployees() {
-        EmployeeService.shared.getEmptyList {[weak self]  (result) in
+        EmployeeService.shared.getEmployeeList {[weak self]  (result) in
             
             let hud = JGProgressHUD()
             
@@ -98,7 +98,18 @@ class EmployeeEmptyListVC: UICollectionViewController {
 
 extension EmployeeEmptyListVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width - 20, height: 700)
+        let dummyCell = EmployeeViewCell(frame: .init(x: 0, y: 0, width: view.frame.width, height: 1000))
+        dummyCell.fullNameLabel.text = employees[indexPath.item].fullName
+        dummyCell.emailAddressLabel.text = employees[indexPath.item].emailAddress
+        dummyCell.phoneNumberLabel.text = employees[indexPath.item].phoneNumber
+        dummyCell.teamLabel.text = employees[indexPath.item].team
+        dummyCell.employeeTypeLabel.text = employees[indexPath.item].employeeType.rawValue
+        dummyCell.biography.text = employees[indexPath.item].biography
+        dummyCell.layoutIfNeeded()
+        let estimatedSize = dummyCell.systemLayoutSizeFitting(.init(width: view.frame.width, height: 500))
+        
+        
+        return .init(width: view.frame.width - 20, height: estimatedSize.height)
     }
 }
 
