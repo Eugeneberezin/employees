@@ -26,7 +26,7 @@ class EmployeeEmptyListVC: UICollectionViewController {
     }
     
     fileprivate func getEmployees() {
-        EmployeeService.shared.getEmployeeList {[weak self]  (result) in
+        EmployeeService.shared.getEmptyList {[weak self]  (result) in
             
             let hud = JGProgressHUD()
             
