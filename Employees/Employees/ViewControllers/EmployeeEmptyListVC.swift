@@ -98,7 +98,8 @@ class EmployeeEmptyListVC: UICollectionViewController {
 
 extension EmployeeEmptyListVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let dummyCell = EmployeeViewCell(frame: .init(x: 0, y: 0, width: view.frame.width, height: 1000))
+        
+        let dummyCell = EmployeeViewCell(frame: .init(x: 0, y: 0, width: view.frame.width, height: 500))
         dummyCell.fullNameLabel.text = employees[indexPath.item].fullName
         dummyCell.emailAddressLabel.text = employees[indexPath.item].emailAddress
         dummyCell.phoneNumberLabel.text = employees[indexPath.item].phoneNumber
@@ -106,6 +107,8 @@ extension EmployeeEmptyListVC: UICollectionViewDelegateFlowLayout {
         dummyCell.employeeTypeLabel.text = employees[indexPath.item].employeeType.rawValue
         dummyCell.biography.text = employees[indexPath.item].biography
         dummyCell.layoutIfNeeded()
+        
+        
         let estimatedSize = dummyCell.systemLayoutSizeFitting(.init(width: view.frame.width, height: 500))
         
         

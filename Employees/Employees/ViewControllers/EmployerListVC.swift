@@ -99,7 +99,7 @@ class EmployerListVC: UICollectionViewController {
 extension EmployerListVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //adding re-sizing functionality based on the text size of the cell
-        let dummyCell = EmployeeViewCell(frame: .init(x: 0, y: 0, width: view.frame.width, height: 1000))
+        let dummyCell = EmployeeViewCell(frame: .init(x: 0, y: 0, width: view.frame.width, height: 600))
         dummyCell.fullNameLabel.text = employees[indexPath.item].fullName
         dummyCell.emailAddressLabel.text = employees[indexPath.item].emailAddress
         dummyCell.phoneNumberLabel.text = employees[indexPath.item].phoneNumber
