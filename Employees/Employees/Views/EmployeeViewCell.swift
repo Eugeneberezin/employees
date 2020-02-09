@@ -15,7 +15,7 @@ class EmployeeViewCell: UICollectionViewCell {
         didSet {
             guard let imageURL = URL(string: employee.photoUrlSmall ?? "") else { return }
             photoView.image?.accessibilityLabel = "Employee's photo"
-            photoView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "Small"), options: .waitStoreCache)
+            photoView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "placeholder"), options: .waitStoreCache)
             fullNameLabel.text = "Full name: " + employee.fullName
             phoneNumberLabel.text = "Phone number: \(employee.phoneNumber ?? "")"
             emailAddressLabel.text = "Email: \(employee.emailAddress)"
@@ -25,7 +25,7 @@ class EmployeeViewCell: UICollectionViewCell {
         }
     }
     
-    let photoView = UIImageView(image: UIImage(named: "small"))
+    let photoView = UIImageView(image: UIImage(named: "placeholder"))
     let fullNameLabel = UILabel(text: "Full name: Justine Mason", font: UIFont.preferredFont(forTextStyle: .body), textColor: .label)
     let phoneNumberLabel = UILabel(text: "Phone number: 5553280123", font: UIFont.preferredFont(forTextStyle: .body), textColor: .label)
     let emailAddressLabel = UILabel(text: "email: jmason.demo@squareup.com", font: UIFont.preferredFont(forTextStyle: .body), textColor: .label)
@@ -60,9 +60,10 @@ class EmployeeViewCell: UICollectionViewCell {
     
     private func configureUI() {
         addSubview(photoView)
+        photoView.contentMode = .scaleAspectFit
         photoView.accessibilityLabel = "Employee's photo"
         photoView.image?.accessibilityLabel = "Employee's photo"
-        photoView.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: topPadding, left: leftingPadding, bottom: topPadding, right: rightPadding))
+        photoView.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: topPadding, left: leftingPadding, bottom: topPadding, right: rightPadding), size: .init(width: 250, height: 250))
         let stackView = UIStackView(arrangedSubviews: [fullNameLabel, phoneNumberLabel, emailAddressLabel, teamLabel, employeeTypeLabel, biography])
         scaleText()
         biography.backgroundColor = UIColor(named: "cellBackgorund")
