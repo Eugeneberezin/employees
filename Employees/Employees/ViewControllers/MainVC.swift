@@ -17,6 +17,8 @@ class MainVC: UIViewController {
         button.heightAnchor.constraint(equalToConstant: 60).isActive = true
         button.layer.cornerRadius = 20
         button.setTitle("Get Employee List", for: .normal)
+        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
+        button.titleLabel!.adjustsFontForContentSizeCategory = true
         button.addTarget(self, action: #selector(navigateToEmployeeList), for: .touchUpInside)
         return button
     }()
@@ -28,6 +30,7 @@ class MainVC: UIViewController {
         button.heightAnchor.constraint(equalToConstant: 60).isActive = true
         button.layer.cornerRadius = 20
         button.setTitle("Get Empty Employee List", for: .normal)
+        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
         button.addTarget(self, action: #selector(navigateToEmptyEmployeeList), for: .touchUpInside)
         return button
     }()
@@ -39,6 +42,7 @@ class MainVC: UIViewController {
         button.heightAnchor.constraint(equalToConstant: 60).isActive = true
         button.layer.cornerRadius = 20
         button.setTitle("Get Malformed Employee List", for: .normal)
+        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
         button.addTarget(self, action: #selector(navigateToMalformedEmployeeList), for: .touchUpInside)
         return button
     }()
@@ -48,7 +52,7 @@ class MainVC: UIViewController {
         configureUI()
     }
     fileprivate func configureUI() {
-        title = "Get EmplyeeList"
+        title = "Get Employee List"
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .tertiarySystemBackground
         let stackView = UIStackView(arrangedSubviews: [getEmployeeListButton, getEmptyEmployeeListButton, getMalFormedEmployeeListButton])

@@ -56,6 +56,7 @@ class EmployeeViewCell: UICollectionViewCell {
         employeeTypeLabel.adjustsFontForContentSizeCategory = true
         employeeTypeLabel.numberOfLines = 0
         biography.adjustsFontForContentSizeCategory = true
+        biography.isAccessibilityElement = true
     }
     
     private func configureUI() {
